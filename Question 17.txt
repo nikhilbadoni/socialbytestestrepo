@@ -1,0 +1,11 @@
+SELECT
+    e.id,
+    m.month,
+    SUM(e.salary) OVER (PARTITION BY e.id ORDER BY m.month DESC ROWS BETWEEN 2 PRECEDING AND 1 PRECEDING) AS cumulative_salary
+FROM
+    (SELECT DISTINCT id FROM Employee) e
+CROSS JOIN
+    (SELECT DISTINCT SUBSTRING(Period, 1, 7) AS month FROM SalaryData) m
+ORDER BY
+    e.id ASC,
+    m.month DESC;
