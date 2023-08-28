@@ -1,0 +1,18 @@
+-- Creating the Student table
+
+CREATE TABLE Student (
+    ID INT PRIMARY KEY NOT NULL,
+    Name VARCHAR(20) NOT NULL,
+    Age INT NOT NULL,
+    Address VARCHAR(25)
+);
+
+-- Inserting five records into the Student table.
+
+INSERT INTO Student (ID, Name, Age, Address)
+VALUES
+    (1, 'Raj', 20, '123 Rajapuri'),
+    (2, 'Rajkumar', 22, '456 Dwarka'),
+    (3, 'Akhi', 19, '789 Bengaluru'),
+    (4, 'Taj', 21, '101 Silicon Valley USA'),
+    (5, 'harshit', 18, '202 Kirti Nagar');
